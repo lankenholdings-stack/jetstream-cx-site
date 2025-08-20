@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leadership | JetStream CX</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Montserrat', sans-serif; }
+    h1,h2,h3 { font-family: 'Playfair Display', serif; }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-[#0A2540] via-[#1E3A8A] to-[#164E96] text-white min-h-screen">
+
+  <!-- Navbar -->
+  <header class="bg-[#0A2540]/90 backdrop-blur fixed w-full z-50">
+    <nav class="max-w-6xl mx-auto px-6 flex justify-between items-center h-16">
+      <a href="index.html" class="text-xl font-bold">JetStream CX</a>
+      <div class="space-x-6 hidden md:flex">
+        <a href="index.html#about" class="hover:text-gray-300">About</a>
+        <a href="leadership.html" class="hover:text-gray-300">Leadership</a>
+        <a href="index.html#services" class="hover:text-gray-300">Services</a>
+        <a href="index.html#contact" class="hover:text-gray-300">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="pt-32 pb-16 px-6 text-center">
+    <h1 class="text-5xl font-bold mb-4">Leadership Team</h1>
+    <p class="max-w-3xl mx-auto text-lg">Meet the people guiding JetStream CX toward excellence in customer experience.</p>
+  </section>
+
+  <!-- Erick Bio -->
+  <section class="px-6 py-12 bg-white text-gray-800">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-semibold text-blue-900 mb-3">Erick Lanier — Founder & CEO</h2>
+      <p class="mb-4">
+        Erick Lanier has built his career around creating meaningful experiences for people. With a foundation in business aviation, he has worked closely with ultra-high-net-worth individuals, corporate accounts, and industry partners to ensure travel is seamless, reliable, and memorable.
+      </p>
+      <p class="mb-4">
+        Over the years, Erick’s experience has spanned concierge services, client account management, and operational support, where he has helped organizations strengthen the way they serve their clients. Beyond aviation, he has also extended his expertise into the wine and spirits retail industry, applying the same principles of high-touch service to consumer engagement.
+      </p>
+      <p class="mb-4">
+        Erick is passionate about the future of the industries he serves, contributing to advocacy efforts around workforce development, innovation, and service excellence. Outside of work, he enjoys time with his wife, Remy, and their dog, Clue, as well as golf, cigars, and travel.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#0A2540] text-white py-6 text-center mt-12">
+    <p>© <span id="year"></span> JetStream CX. All rights reserved.</p>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
