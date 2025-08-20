@@ -4,128 +4,114 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>JetStream CX</title>
-  <meta name="description" content="JetStream CX — Aviation Client Experience and Consulting." />
-
-  <!-- Fonts & Tailwind -->
+  <meta name="description" content="JetStream CX — Elevating Customer Experience Across Aviation and Beyond." />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-
   <style>
     html { scroll-behavior: smooth; }
     body { font-family: 'Montserrat', sans-serif; }
-    h1, h2, h3 { font-family: 'Playfair Display', serif; }
-    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    h1,h2,h3 { font-family: 'Playfair Display', serif; }
   </style>
 </head>
-<body class="text-gray-800 min-h-screen bg-gradient-to-b from-[#0A2540] via-[#1E3A8A] to-[#1E88E5]">
+<body class="bg-gradient-to-b from-[#0A2540] via-[#1E3A8A] to-[#164E96] text-white min-h-screen">
 
   <!-- Navbar -->
-  <nav class="fixed inset-x-0 top-0 z-50 bg-white/85 backdrop-blur shadow">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="#home" class="flex items-center space-x-3">
-        <span class="text-2xl font-bold text-[#0A2540]">JetStream CX</span>
-      </a>
-      <div class="hidden md:flex items-center gap-6 text-gray-900">
-        <a href="#about" class="hover:text-blue-600">About</a>
-        <a href="#services" class="hover:text-blue-600">Services</a>
-        <a href="#contact" class="hover:text-blue-600">Contact</a>
+  <header class="fixed w-full bg-[#0A2540]/90 backdrop-blur text-white z-50">
+    <nav class="max-w-6xl mx-auto px-6 flex justify-between items-center h-16">
+      <a href="index.html" class="text-xl font-bold">JetStream CX</a>
+      <div class="space-x-6 hidden md:flex">
+        <a href="#about" class="hover:text-gray-300">About</a>
+        <a href="#leadership" class="hover:text-gray-300">Leadership</a>
+        <a href="#services" class="hover:text-gray-300">Services</a>
+        <a href="#contact" class="hover:text-gray-300">Contact</a>
       </div>
-      <button aria-label="Open Menu" class="md:hidden px-3 py-2 rounded hover:bg-gray-100"
-              onclick="document.getElementById('mnav').classList.toggle('hidden')">☰</button>
-    </div>
-    <!-- Mobile Nav -->
-    <div id="mnav" class="hidden md:hidden border-t border-gray-200 bg-white/95">
-      <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col gap-3 text-gray-900">
-        <a href="#about" onclick="this.closest('#mnav').classList.add('hidden')" class="hover:text-blue-600">About</a>
-        <a href="#services" onclick="this.closest('#mnav').classList.add('hidden')" class="hover:text-blue-600">Services</a>
-        <a href="#contact" onclick="this.closest('#mnav').classList.add('hidden')" class="hover:text-blue-600">Contact</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Spacer for fixed nav -->
-  <div class="h-20"></div>
+    </nav>
+  </header>
 
   <!-- Hero -->
-  <section id="home" class="min-h-[80vh] flex flex-col justify-center items-center text-center px-6 fade-in">
+  <section id="home" class="flex items-center justify-center text-center min-h-screen px-6">
     <div class="max-w-3xl">
-      <h1 class="text-5xl md:text-6xl text-white mb-4">Excellence in Aviation Experience</h1>
-      <p class="text-lg md:text-xl text-white/90 mb-8">
-        Tailored solutions for every journey — from one-time consultations to long-term service plans.
-      </p>
-      <a href="#about"
-         class="inline-block px-7 py-3 rounded-lg bg-white text-blue-900 font-semibold shadow hover:bg-gray-100 transition">
-        Learn More
-      </a>
+      <h1 class="text-5xl md:text-6xl font-bold mb-6">Elevating Customer Experience Across Aviation and Beyond</h1>
+      <p class="text-lg md:text-xl mb-8">Delivering measurable results in customer service and operational excellence.</p>
+      <a href="#services" class="px-6 py-3 bg-white text-blue-900 rounded-lg shadow hover:bg-gray-200">View Services</a>
+      <a href="#contact" class="ml-4 px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-blue-900">Contact Us</a>
     </div>
   </section>
 
   <!-- About Us -->
-  <section id="about" class="py-20 px-6 fade-in">
+  <section id="about" class="py-20 px-6 bg-white text-gray-800">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-4xl text-white mb-10 text-center">About Us</h2>
-      <div class="bg-white/90 rounded-2xl p-8 md:p-10 shadow ring-1 ring-black/5 space-y-6">
-        <p class="text-gray-800">
-          At JetStream CX, we specialize in aviation client experience, offering tailored solutions that bring unmatched value to both individuals and organizations.
-        </p>
-        <h3 class="text-2xl font-semibold text-blue-900">Leadership Team</h3>
-        <p class="text-gray-800">
-          Our leadership team combines decades of aviation expertise with a passion for exceptional service. Information about our leadership team will be shared soon.
-        </p>
-      </div>
+      <h2 class="text-4xl font-bold mb-6 text-center text-blue-900">About Us</h2>
+      <p class="mb-4">
+        JetStream CX is built on the belief that exceptional customer experiences are the foundation of lasting success.
+        With roots in aviation and reach across multiple industries, we bring clarity, structure, and measurable improvement to every client we serve.
+      </p>
+      <p>
+        We work alongside organizations to analyze their current service models, identify performance gaps, and develop strategic plans for measurable improvement.
+        From frontline interactions to back-end processes, we focus on enhancing every stage of the customer journey.
+      </p>
+    </div>
+  </section>
+
+  <!-- Leadership -->
+  <section id="leadership" class="py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-6">Leadership Team</h2>
+      <h3 class="text-2xl font-semibold mb-3">Erick Lanier — Founder</h3>
+      <p class="mb-4">
+        Erick Lanier has built his career around creating meaningful experiences for people. With a foundation in business aviation, he has worked closely with ultra-high-net-worth individuals, corporate accounts, and industry partners to ensure travel is seamless, reliable, and memorable.
+      </p>
+      <p class="mb-4">
+        Over the years, Erick’s experience has spanned concierge services, client account management, and operational support, where he has helped organizations strengthen the way they serve their clients. Beyond aviation, he has also extended his expertise into the wine and spirits retail industry, applying the same principles of high-touch service to consumer engagement.
+      </p>
+      <p class="mb-4">
+        Erick is passionate about the future of the industries he serves, contributing to advocacy efforts around workforce development, innovation, and service excellence. Outside of work, he enjoys time with his wife, Remy, and their dog, Clue, as well as golf, cigars, and travel.
+      </p>
     </div>
   </section>
 
   <!-- Services -->
-  <section id="services" class="py-20 px-6 fade-in">
+  <section id="services" class="py-20 px-6 bg-white text-gray-800">
     <div class="max-w-6xl mx-auto">
-      <h2 class="text-4xl text-white mb-10 text-center">Services</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white/90 rounded-2xl p-6 shadow ring-1 ring-black/5">
-          <h3 class="text-2xl font-semibold text-blue-900 mb-3">One-Time Consultation</h3>
-          <p class="text-gray-700">Get tailored insights and expert advice for your aviation challenges with a single, high-impact consultation.</p>
+      <h2 class="text-4xl font-bold text-center text-blue-900 mb-12">Our Services</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Service 1 -->
+        <div class="p-6 bg-gray-50 rounded-lg shadow">
+          <h3 class="text-2xl font-semibold mb-3">One-Time Consultation</h3>
+          <p class="mb-4">A focused in-person or virtual session with recommendations delivered within 2 weeks.</p>
+          <a href="services/consultation.html" class="text-blue-700 hover:underline">Learn More →</a>
         </div>
-        <div class="bg-white/90 rounded-2xl p-6 shadow ring-1 ring-black/5">
-          <h3 class="text-2xl font-semibold text-blue-900 mb-3">Long-Term Service Plans</h3>
-          <p class="text-gray-700">Engage in an ongoing partnership designed to elevate operations, streamline service delivery, and drive sustainable results.</p>
+        <!-- Service 2 -->
+        <div class="p-6 bg-gray-50 rounded-lg shadow">
+          <h3 class="text-2xl font-semibold mb-3">Long-Term Service Plans</h3>
+          <p class="mb-4">Structured 1–2 year service plans with quarterly check-ins, training, and accountability.</p>
+          <a href="services/plans.html" class="text-blue-700 hover:underline">Learn More →</a>
         </div>
-        <div class="bg-white/90 rounded-2xl p-6 shadow ring-1 ring-black/5">
-          <h3 class="text-2xl font-semibold text-blue-900 mb-3">Add-Ons</h3>
-          <p class="text-gray-700">Enhance your service plan with customized add-ons, from specialized training to client experience audits.</p>
+        <!-- Service 3 -->
+        <div class="p-6 bg-gray-50 rounded-lg shadow">
+          <h3 class="text-2xl font-semibold mb-3">Custom Add-Ons</h3>
+          <p class="mb-4">Additional check-ins, recruitment support, staff training, or on-site visits as needed.</p>
+          <a href="services/addons.html" class="text-blue-700 hover:underline">Learn More →</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="py-20 px-6 fade-in">
+  <section id="contact" class="py-20 px-6">
     <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-4xl text-white mb-10">Contact Us</h2>
-      <div class="bg-white/90 rounded-2xl p-8 md:p-10 shadow-lg ring-1 ring-black/5 space-y-4">
-        <p class="text-lg text-gray-800">
-          <span class="font-semibold">Email:</span>
-          <a href="mailto:info@jetstreamcx.com" class="text-blue-700 hover:underline">info@jetstreamcx.com</a>
-        </p>
-        <p class="text-lg text-gray-800">
-          <span class="font-semibold">Location:</span> Louisville, KY
-        </p>
-      </div>
+      <h2 class="text-4xl font-bold mb-6">Contact Us</h2>
+      <p class="mb-4">We’ll respond within one business day.</p>
+      <p class="mb-2">📧 contact@jetstreamcx.com</p>
+      <p>📍 Louisville, KY</p>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="py-8 text-center text-white/80">
-    <p>&copy; <span id="year"></span> JetStream CX. All rights reserved.</p>
+  <footer class="bg-[#0A2540] text-white py-6 text-center">
+    <p>© <span id="year"></span> JetStream CX. All rights reserved.</p>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const faders = document.querySelectorAll('.fade-in');
-    const io = new IntersectionObserver((entries, obs) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
-    }, { threshold: 0.12 });
-    faders.forEach(el => io.observe(el));
-  </script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
