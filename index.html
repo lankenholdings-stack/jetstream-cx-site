@@ -16,18 +16,42 @@
 <body class="bg-gradient-to-b from-[#0A2540] via-[#1E3A8A] to-[#164E96] text-white min-h-screen">
 
   <!-- Navbar -->
-  <header class="fixed w-full bg-[#0A2540]/90 backdrop-blur text-white z-50">
-    <nav class="max-w-6xl mx-auto px-6 flex justify-between items-center h-16">
-      <a href="index.html" class="text-xl font-bold">JetStream CX</a>
-      <div class="space-x-6 hidden md:flex">
-  <a href="#about" class="hover:text-gray-300">About</a>
-  <a href="leadership.html" class="hover:text-gray-300">Leadership</a>
-  <a href="#services" class="hover:text-gray-300">Services</a>
-  <a href="#contact" class="hover:text-gray-300">Contact</a>
-</div>
+<header class="fixed w-full bg-[#0A2540]/90 backdrop-blur text-white z-50">
+  <nav class="max-w-6xl mx-auto px-6 flex justify-between items-center h-16">
+    <a href="index.html" class="text-xl font-bold">JetStream CX</a>
 
-    </nav>
-  </header>
+    <!-- Desktop Nav -->
+    <div class="space-x-6 hidden md:flex">
+      <a href="#about" class="hover:text-gray-300">About</a>
+      <a href="leadership.html" class="hover:text-gray-300">Leadership</a>
+      <a href="#services" class="hover:text-gray-300">Services</a>
+      <a href="#contact" class="hover:text-gray-300">Contact</a>
+    </div>
+
+    <!-- Mobile Button -->
+    <button id="menu-btn" class="md:hidden focus:outline-none">
+      ☰
+    </button>
+  </nav>
+
+  <!-- Mobile Menu (hidden by default) -->
+  <div id="mobile-menu" class="hidden bg-[#0A2540] md:hidden flex flex-col space-y-4 px-6 py-4">
+    <a href="#about" class="hover:text-gray-300">About</a>
+    <a href="leadership.html" class="hover:text-gray-300">Leadership</a>
+    <a href="#services" class="hover:text-gray-300">Services</a>
+    <a href="#contact" class="hover:text-gray-300">Contact</a>
+  </div>
+</header>
+
+<script>
+  // Toggle mobile menu
+  const btn = document.getElementById("menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+</script>
+
 
   <!-- Hero -->
   <section id="home" class="flex items-center justify-center text-center min-h-screen px-6">
