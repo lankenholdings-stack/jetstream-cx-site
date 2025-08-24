@@ -11,6 +11,8 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Montserrat', sans-serif; }
     h1,h2,h3 { font-family: 'Playfair Display', serif; }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.8s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
   </style>
 </head>
 <body class="bg-gradient-to-b from-[#0A2540] via-[#1E3A8A] to-[#164E96] text-white min-h-screen">
@@ -18,23 +20,23 @@
   <!-- Navbar -->
 <header class="fixed w-full bg-[#0A2540]/90 backdrop-blur text-white z-50">
   <nav class="max-w-6xl mx-auto px-6 flex justify-between items-center h-16">
-    <a href="index.html" class="text-xl font-bold">JetStream CX</a>
+    <a href="index.html" class="text-xl font-bold tracking-wide">JetStream CX</a>
 
     <!-- Desktop Nav -->
     <div class="space-x-6 hidden md:flex">
-      <a href="#about" class="hover:text-gray-300">About</a>
-      <a href="leadership.html" class="hover:text-gray-300">Leadership</a>
-      <a href="#services" class="hover:text-gray-300">Services</a>
-      <a href="#contact" class="hover:text-gray-300">Contact</a>
+      <a href="#about" class="hover:text-gray-300 transition">About</a>
+      <a href="leadership.html" class="hover:text-gray-300 transition">Leadership</a>
+      <a href="#services" class="hover:text-gray-300 transition">Services</a>
+      <a href="#contact" class="hover:text-gray-300 transition">Contact</a>
     </div>
 
     <!-- Mobile Button -->
-    <button id="menu-btn" class="md:hidden focus:outline-none">
+    <button id="menu-btn" class="md:hidden focus:outline-none text-2xl">
       ☰
     </button>
   </nav>
 
-  <!-- Mobile Menu (hidden by default) -->
+  <!-- Mobile Menu -->
   <div id="mobile-menu" class="hidden bg-[#0A2540] md:hidden flex flex-col space-y-4 px-6 py-4">
     <a href="#about" class="hover:text-gray-300">About</a>
     <a href="leadership.html" class="hover:text-gray-300">Leadership</a>
@@ -44,88 +46,78 @@
 </header>
 
 <script>
-  // Toggle mobile menu
   const btn = document.getElementById("menu-btn");
   const menu = document.getElementById("mobile-menu");
-  btn.addEventListener("click", () => {
-    menu.classList.toggle("hidden");
-  });
+  btn.addEventListener("click", () => menu.classList.toggle("hidden"));
 </script>
 
-
   <!-- Hero -->
-  <section id="home" class="flex items-center justify-center text-center min-h-screen px-6">
-    <div class="max-w-3xl">
+  <section id="home" class="relative flex items-center justify-center text-center min-h-screen px-6">
+    <div class="absolute inset-0">
+      <img src="assets/jet-boarding.jpg" alt="Private Jet Boarding" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-[#0A2540]/70"></div>
+    </div>
+    <div class="relative z-10 max-w-3xl fade-in">
       <h1 class="text-5xl md:text-6xl font-bold mb-6">Elevating Customer Experience Across Aviation and Beyond</h1>
       <p class="text-lg md:text-xl mb-8">Delivering measurable results in customer service and operational excellence.</p>
-      <a href="#services" class="px-6 py-3 bg-white text-blue-900 rounded-lg shadow hover:bg-gray-200">View Services</a>
-      <a href="#contact" class="ml-4 px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-blue-900">Contact Us</a>
+      <a href="#services" class="px-6 py-3 bg-white text-blue-900 rounded-lg shadow hover:scale-105 hover:bg-gray-200 transition transform">View Services</a>
+      <a href="#contact" class="ml-4 px-6 py-3 border border-white rounded-lg hover:scale-105 hover:bg-white hover:text-blue-900 transition transform">Contact Us</a>
     </div>
   </section>
 
-  <!-- About Us -->
-<section id="about" class="py-20 px-6 bg-white text-gray-800">
-  <div class="max-w-5xl mx-auto">
-    <h2 class="text-4xl font-bold mb-6 text-center text-blue-900">About Us</h2>
-    <p class="mb-4">
-      JetStream CX is built on the belief that exceptional customer experiences are the foundation of lasting success.
-      With roots in aviation and reach across multiple industries, we bring clarity, structure, and measurable improvement to every client we serve.
-    </p>
-    <p class="mb-10">
-      We work alongside organizations to analyze their current service models, identify performance gaps, and develop strategic plans for measurable improvement.
-      From frontline interactions to back-end processes, we focus on enhancing every stage of the customer journey.
-    </p>
-
-    <!-- What Sets Us Apart -->
-    <div class="bg-gray-50 rounded-2xl p-8 md:p-10 shadow ring-1 ring-black/5">
-      <h3 class="text-3xl font-semibold text-blue-900 mb-6 text-center">What Sets Us Apart</h3>
-      <ul class="grid md:grid-cols-2 gap-4 text-gray-800">
-        <li class="flex items-start gap-3">
-          <span class="text-blue-700">✔</span>
-          <span>Expertise shaped by aviation, hospitality, and premium service industries</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="text-blue-700">✔</span>
-          <span>Actionable strategies grounded in analysis and data</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="text-blue-700">✔</span>
-          <span>Solutions designed for both immediate wins and long-term sustainability</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="text-blue-700">✔</span>
-          <span>Commitment to excellence at every stage of the customer journey</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="text-blue-700">✔</span>
-          <span>Bringing the human element back to customer experience — blending service with genuine connection</span>
-        </li>
-      </ul>
-    </div>
+  <!-- Divider -->
+  <div class="w-full overflow-hidden leading-none">
+    <svg class="w-full h-12 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path fill="currentColor" d="M0,64L1440,0L1440,100L0,100Z"></path>
+    </svg>
   </div>
-</section>
 
+  <!-- About Us -->
+  <section id="about" class="py-20 px-6 bg-white text-gray-800">
+    <div class="max-w-5xl mx-auto fade-in">
+      <h2 class="text-4xl font-bold mb-6 text-center text-blue-900">About Us</h2>
+      <p class="mb-4">
+        JetStream CX is built on the belief that exceptional customer experiences are the foundation of lasting success.
+        With roots in aviation and reach across multiple industries, we bring clarity, structure, and measurable improvement to every client we serve.
+      </p>
+      <p class="mb-10">
+        We work alongside organizations to analyze their current service models, identify performance gaps, and develop strategic plans for measurable improvement.
+        From frontline interactions to back-end processes, we focus on enhancing every stage of the customer journey.
+      </p>
 
+      <!-- What Sets Us Apart -->
+      <div class="bg-gray-50 rounded-2xl p-8 md:p-10 shadow-lg hover:shadow-xl transition fade-in">
+        <h3 class="text-3xl font-semibold text-blue-900 mb-6 text-center">What Sets Us Apart</h3>
+        <ul class="grid md:grid-cols-2 gap-4 text-gray-800">
+          <li class="flex items-start gap-3"><span class="text-blue-700">✔</span> Expertise shaped by aviation, hospitality, and premium service industries</li>
+          <li class="flex items-start gap-3"><span class="text-blue-700">✔</span> Actionable strategies grounded in analysis and data</li>
+          <li class="flex items-start gap-3"><span class="text-blue-700">✔</span> Solutions designed for both immediate wins and long-term sustainability</li>
+          <li class="flex items-start gap-3"><span class="text-blue-700">✔</span> Commitment to excellence at every stage of the customer journey</li>
+          <li class="flex items-start gap-3"><span class="text-blue-700">✔</span> Bringing the human element back to customer experience — blending service with genuine connection</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
   <!-- Services -->
   <section id="services" class="py-20 px-6 bg-white text-gray-800">
     <div class="max-w-6xl mx-auto">
-      <h2 class="text-4xl font-bold text-center text-blue-900 mb-12">Our Services</h2>
+      <h2 class="text-4xl font-bold text-center text-blue-900 mb-12 fade-in">Our Services</h2>
       <div class="grid md:grid-cols-3 gap-8">
         <!-- Service 1 -->
-        <div class="p-6 bg-gray-50 rounded-lg shadow">
+        <div class="p-6 bg-gray-50 rounded-lg shadow hover:shadow-2xl transform hover:-translate-y-2 transition fade-in">
           <h3 class="text-2xl font-semibold mb-3">One-Time Consultation</h3>
           <p class="mb-4">A focused in-person or virtual session with recommendations delivered within 2 weeks.</p>
           <a href="services/consultation.html" class="text-blue-700 hover:underline">Learn More →</a>
         </div>
         <!-- Service 2 -->
-        <div class="p-6 bg-gray-50 rounded-lg shadow">
+        <div class="p-6 bg-gray-50 rounded-lg shadow hover:shadow-2xl transform hover:-translate-y-2 transition fade-in">
           <h3 class="text-2xl font-semibold mb-3">Long-Term Service Plans</h3>
           <p class="mb-4">Structured 1–2 year service plans with quarterly check-ins, training, and accountability.</p>
           <a href="services/plans.html" class="text-blue-700 hover:underline">Learn More →</a>
         </div>
         <!-- Service 3 -->
-        <div class="p-6 bg-gray-50 rounded-lg shadow">
+        <div class="p-6 bg-gray-50 rounded-lg shadow hover:shadow-2xl transform hover:-translate-y-2 transition fade-in">
           <h3 class="text-2xl font-semibold mb-3">Custom Add-Ons</h3>
           <p class="mb-4">Additional check-ins, recruitment support, staff training, or on-site visits as needed.</p>
           <a href="services/addons.html" class="text-blue-700 hover:underline">Learn More →</a>
@@ -135,21 +127,32 @@
   </section>
 
   <!-- Contact -->
-<section id="contact" class="py-20 px-6">
+<section id="contact" class="py-20 px-6 fade-in">
   <div class="max-w-4xl mx-auto text-center">
     <h2 class="text-4xl font-bold mb-6">Contact Us</h2>
     <p class="mb-4">We’ll respond within one business day.</p>
-    <p class="mb-2">📧 <a href="mailto:jetstreamcx@gmail.com" class="text-blue-300 hover:underline">jetstreamcx@gmail.com</a></p>
+    <p class="mb-2">📧 <a href="mailto:jetstreamcx@gmail.com" class="text-blue-700 hover:underline">jetstreamcx@gmail.com</a></p>
     <p>📍 Louisville, KY</p>
   </div>
 </section>
 
-
   <!-- Footer -->
-  <footer class="bg-[#0A2540] text-white py-6 text-center">
+  <footer class="bg-gradient-to-r from-[#0A2540] to-[#1E3A8A] text-white py-6 text-center">
     <p>© <span id="year"></span> JetStream CX. All rights reserved.</p>
   </footer>
 
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const faders = document.querySelectorAll(".fade-in");
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
 </body>
 </html>
