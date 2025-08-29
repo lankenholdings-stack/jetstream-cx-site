@@ -29,9 +29,11 @@
 
       <!-- Services Dropdown -->
       <div class="relative" id="services-menu">
-        <button class="hover:text-gray-300 focus:outline-none">Services ▾</button>
+        <button id="services-btn" class="hover:text-gray-300 focus:outline-none flex items-center">
+          Services ▾
+        </button>
         <div id="services-dropdown" 
-             class="absolute left-0 mt-2 w-56 bg-[#0A2540] text-white rounded-lg shadow-lg hidden">
+             class="absolute left-0 mt-2 w-56 bg-[#0A2540] text-white rounded-lg shadow-lg hidden z-50">
           <a href="index.html#services" class="block px-4 py-2 hover:bg-[#1E3A8A]">Overview</a>
           <a href="services/consultation.html" class="block px-4 py-2 hover:bg-[#1E3A8A]">One-Time Consultation</a>
           <a href="services/plans.html" class="block px-4 py-2 hover:bg-[#1E3A8A]">Long-Term Service Plans</a>
@@ -67,15 +69,21 @@
     document.getElementById("mobile-menu").classList.toggle("hidden");
   });
 
-  // Services dropdown hover logic
-  const menu = document.getElementById('services-menu');
-  const dropdown = document.getElementById('services-dropdown');
+  // Services dropdown toggle (click to open/close)
+  const servicesBtn = document.getElementById('services-btn');
+  const servicesDropdown = document.getElementById('services-dropdown');
+  const servicesMenu = document.getElementById('services-menu');
 
-  menu.addEventListener('mouseenter', () => {
-    dropdown.classList.remove('hidden');
+  servicesBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // prevent click bubbling
+    servicesDropdown.classList.toggle('hidden');
   });
-  menu.addEventListener('mouseleave', () => {
-    dropdown.classList.add('hidden');
+
+  // Close dropdown if click happens outside
+  document.addEventListener('click', (e) => {
+    if (!servicesMenu.contains(e.target)) {
+      servicesDropdown.classList.add('hidden');
+    }
   });
 </script>
 
