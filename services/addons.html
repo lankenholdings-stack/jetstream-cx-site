@@ -17,26 +17,54 @@
 
   <!-- Navbar -->
   <header class="fixed w-full bg-[#0A2540]/90 backdrop-blur text-white z-50">
-    <nav class="max-w-6xl mx-auto px-6 flex justify-between items-center h-16">
-      <a href="../index.html" class="text-xl font-bold tracking-wide">JetStream CX</a>
-      <div class="space-x-6 hidden md:flex">
-        <a href="../index.html#about" class="hover:text-gray-300">About</a>
-        <a href="../leadership.html" class="hover:text-gray-300">Leadership</a>
-        <a href="../index.html#services" class="hover:text-gray-300">Services</a>
-        <a href="../index.html#contact" class="hover:text-gray-300">Contact</a>
+  <nav class="max-w-6xl mx-auto px-6 flex justify-between items-center h-16 relative">
+    <a href="index.html" class="text-xl font-bold tracking-wide">JetStream CX</a>
+
+    <!-- Desktop Nav -->
+    <div class="space-x-6 hidden md:flex items-center">
+      <a href="index.html#about" class="hover:text-gray-300">About</a>
+      <a href="leadership.html" class="hover:text-gray-300">Leadership</a>
+
+      <!-- Services Dropdown -->
+      <div class="relative group">
+        <button class="hover:text-gray-300 focus:outline-none">Services ▾</button>
+        <div class="absolute left-0 mt-2 w-56 bg-[#0A2540] text-white rounded-lg shadow-lg opacity-0 invisible 
+                    group-hover:opacity-100 group-hover:visible transition duration-200 z-50">
+          <a href="index.html#services" class="block px-4 py-2 hover:bg-[#1E3A8A]">Overview</a>
+          <a href="services/consultation.html" class="block px-4 py-2 hover:bg-[#1E3A8A]">One-Time Consultation</a>
+          <a href="services/plans.html" class="block px-4 py-2 hover:bg-[#1E3A8A]">Long-Term Service Plans</a>
+          <a href="services/addons.html" class="block px-4 py-2 hover:bg-[#1E3A8A]">Custom Add-Ons</a>
+        </div>
       </div>
-      <button id="menu-btn" class="md:hidden focus:outline-none text-2xl">☰</button>
-    </nav>
-    <div id="mobile-menu" class="hidden bg-[#0A2540] md:hidden flex flex-col space-y-4 px-6 py-4">
-      <a href="../index.html#about" class="hover:text-gray-300">About</a>
-      <a href="../leadership.html" class="hover:text-gray-300">Leadership</a>
-      <a href="../index.html#services" class="hover:text-gray-300">Services</a>
-      <a href="../index.html#contact" class="hover:text-gray-300">Contact</a>
+
+      <a href="index.html#contact" class="hover:text-gray-300">Contact</a>
     </div>
-  </header>
-  <script>
-    document.getElementById("menu-btn").addEventListener("click",()=>document.getElementById("mobile-menu").classList.toggle("hidden"));
-  </script>
+
+    <!-- Mobile Button -->
+    <button id="menu-btn" class="md:hidden focus:outline-none text-2xl">☰</button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden bg-[#0A2540] md:hidden flex flex-col space-y-4 px-6 py-4">
+    <a href="index.html#about" class="hover:text-gray-300">About</a>
+    <a href="leadership.html" class="hover:text-gray-300">Leadership</a>
+    <div>
+      <p class="font-semibold">Services</p>
+      <a href="index.html#services" class="block pl-4 hover:text-gray-300">Overview</a>
+      <a href="services/consultation.html" class="block pl-4 hover:text-gray-300">One-Time Consultation</a>
+      <a href="services/plans.html" class="block pl-4 hover:text-gray-300">Long-Term Service Plans</a>
+      <a href="services/addons.html" class="block pl-4 hover:text-gray-300">Custom Add-Ons</a>
+    </div>
+    <a href="index.html#contact" class="hover:text-gray-300">Contact</a>
+  </div>
+</header>
+
+<script>
+  document.getElementById("menu-btn").addEventListener("click", () => {
+    document.getElementById("mobile-menu").classList.toggle("hidden");
+  });
+</script>
+
 
   <!-- Hero -->
   <section class="relative flex items-center justify-center text-center min-h-[50vh] px-6">
