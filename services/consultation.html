@@ -16,7 +16,7 @@
 <body class="bg-gradient-to-b from-[#0A2540] via-[#1E3A8A] to-[#164E96] text-white min-h-screen">
 
   <!-- Navbar -->
-  <header class="fixed w-full bg-[#0A2540]/90 backdrop-blur text-white z-50">
+ <header class="fixed w-full bg-[#0A2540]/90 backdrop-blur text-white z-50">
   <nav class="max-w-6xl mx-auto px-6 flex justify-between items-center h-16 relative">
     <a href="index.html" class="text-xl font-bold tracking-wide">JetStream CX</a>
 
@@ -26,10 +26,12 @@
       <a href="leadership.html" class="hover:text-gray-300">Leadership</a>
 
       <!-- Services Dropdown -->
-      <div class="relative group">
-        <button class="hover:text-gray-300 focus:outline-none">Services ▾</button>
-        <div class="absolute left-0 mt-2 w-56 bg-[#0A2540] text-white rounded-lg shadow-lg opacity-0 invisible 
-                    group-hover:opacity-100 group-hover:visible transition duration-200 z-50">
+      <div class="relative" id="services-menu">
+        <button id="services-btn" class="hover:text-gray-300 focus:outline-none flex items-center">
+          Services ▾
+        </button>
+        <div id="services-dropdown" 
+             class="absolute left-0 mt-2 w-56 bg-[#0A2540] text-white rounded-lg shadow-lg hidden z-50">
           <a href="index.html#services" class="block px-4 py-2 hover:bg-[#1E3A8A]">Overview</a>
           <a href="services/consultation.html" class="block px-4 py-2 hover:bg-[#1E3A8A]">One-Time Consultation</a>
           <a href="services/plans.html" class="block px-4 py-2 hover:bg-[#1E3A8A]">Long-Term Service Plans</a>
@@ -60,10 +62,29 @@
 </header>
 
 <script>
+  // Mobile menu toggle
   document.getElementById("menu-btn").addEventListener("click", () => {
     document.getElementById("mobile-menu").classList.toggle("hidden");
   });
+
+  // Services dropdown toggle (click to open/close)
+  const servicesBtn = document.getElementById('services-btn');
+  const servicesDropdown = document.getElementById('services-dropdown');
+  const servicesMenu = document.getElementById('services-menu');
+
+  servicesBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // prevent click bubbling
+    servicesDropdown.classList.toggle('hidden');
+  });
+
+  // Close dropdown if click happens outside
+  document.addEventListener('click', (e) => {
+    if (!servicesMenu.contains(e.target)) {
+      servicesDropdown.classList.add('hidden');
+    }
+  });
 </script>
+
 
 
   <!-- Hero -->
